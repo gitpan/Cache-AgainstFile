@@ -2,7 +2,7 @@
 # Purpose : Cache data structures against a file (serialised in files using Storable)
 # Author  : John Alden
 # Created : 22 Apr 2005 (based on IFL::FileCache)
-# CVS     : $Id: Storable.pm,v 1.21 2006/02/23 14:55:03 iaint Exp $
+# CVS     : $Id: Storable.pm,v 1.22 2006/05/09 09:02:32 mattheww Exp $
 ###############################################################################
 
 package Cache::AgainstFile::Storable;
@@ -24,7 +24,7 @@ use constant HAVE_FILE_POLICY => eval {
 };
 
 use vars qw($VERSION @ISA);
-$VERSION = sprintf"%d.%03d", q$Revision: 1.21 $ =~ /: (\d+)\.(\d+)/;
+$VERSION = sprintf"%d.%03d", q$Revision: 1.22 $ =~ /: (\d+)\.(\d+)/;
 @ISA = qw(Cache::AgainstFile::Base);
 
 #
@@ -246,7 +246,7 @@ sub _read {
 
 sub _create_dir_if_required {
 	my ($dir) = @_;
-	if(! -e $dir) {
+	if(! -d $dir) {
 		eval {
 			require File::Path;
 			File::Path::mkpath($dir);	
@@ -382,7 +382,7 @@ This uses File::NFSLock for locking (no locking is also an option)
 
 =head1 VERSION
 
-$Revision: 1.21 $ on $Date: 2006/02/23 14:55:03 $ by $Author: iaint $
+$Revision: 1.22 $ on $Date: 2006/05/09 09:02:32 $ by $Author: mattheww $
 
 =head1 AUTHOR
 

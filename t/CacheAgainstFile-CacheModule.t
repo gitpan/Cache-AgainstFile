@@ -16,10 +16,11 @@ foreach my $module qw(Cache::Memory Cache::MemoryCache){
 	push @cache_modules, $module unless($@);
 }
 
-plan tests => 1 + 12*scalar @cache_modules;
+plan tests => 2 + 11*scalar @cache_modules;
 
 #Move into the t directory
-chdir('t') if(-d 't');
+chdir($1) if ($0 =~ /(.*)(\/|\\)(.*)/);
+use lib qw(.);
 
 #Load the library of tests
 use vars qw($callcount $callback);

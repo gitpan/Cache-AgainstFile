@@ -11,7 +11,8 @@ getopts('tTd');
 plan tests => 39;
 
 #Move into the t directory
-chdir('t') if(-d 't');
+chdir($1) if ($0 =~ /(.*)(\/|\\)(.*)/);
+use lib qw(.);
 
 #Load the library of tests
 use constant SLEEP_INT => 2;

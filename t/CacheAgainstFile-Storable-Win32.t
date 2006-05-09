@@ -12,7 +12,8 @@ plan tests => 8;
 ignore(1..8) unless($^O eq 'MSWin32');
 
 #Move into the t directory
-chdir('t') if(-d 't');
+chdir($1) if ($0 =~ /(.*)(\/|\\)(.*)/);
+use lib qw(.);
 
 #Compile
 unshift @INC, "../lib";

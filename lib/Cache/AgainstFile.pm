@@ -2,7 +2,7 @@
 # Purpose : Cache data structures against a file
 # Author  : John Alden
 # Created : 22 Apr 2005 (based on IFL::FileCache)
-# CVS     : $Id: AgainstFile.pm,v 1.15 2005/11/04 14:04:51 johna Exp $
+# CVS     : $Id: AgainstFile.pm,v 1.16 2006/05/09 09:04:29 mattheww Exp $
 ###############################################################################
 
 package Cache::AgainstFile;
@@ -11,12 +11,11 @@ use strict;
 use Carp;
 
 use vars qw($VERSION);
-$VERSION = sprintf"%d.%03d", q$Revision: 1.15 $ =~ /: (\d+)\.(\d+)/;
+$VERSION = sprintf"%d.%03d", q$Revision: 1.16 $ =~ /: (\d+)\.(\d+)/;
 
 #
 # API
 #
-
 sub new
 {
 	my ($class, $loader, $options) = @_;
@@ -235,7 +234,7 @@ a rewrite of Cache::Cache with extra features such as validation callbacks
 
 =head1 VERSION
 
-$Revision: 1.15 $ on $Date: 2005/11/04 14:04:51 $ by $Author: johna $
+$Revision: 1.16 $ on $Date: 2006/05/09 09:04:29 $ by $Author: mattheww $
 
 =head1 AUTHOR
 
